@@ -1,0 +1,18 @@
+menuentry "Arch Linux" {
+    icon /EFI/refind/themes/rEFInd-minimal/icons/os_arch.png
+    volume   "boot"
+    loader   vmlinuz-linux
+    initrd   initramfs-linux.img
+    options  "root=PARTUUID=f01d69fb-a7e9-5548-99a8-2b0d3a918859 rw add_efi_memmap nowatchdog acpi_osi=! acpi_osi=""Windows 2009"""
+    submenuentry "Boot using fallback initramfs" {
+        initrd initramfs-linux-fallback.img
+    }
+    submenuentry "Boot to terminal" {
+        add_options "systemd.unit=multi-user.target"
+    }
+}
+
+menuentry "Windows 10" {
+    icon /EFI/refind/themes/rEFInd-minimal/icons/os_win.png
+    loader \EFI\Microsoft\Boot\bootmgfw.efi
+}
