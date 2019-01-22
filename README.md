@@ -3,4 +3,4 @@ i3-gaps
 
 i use Arch btw
 
-<img src="https://imgur.com/bWITgr3" width="100%">
+<img src="https://i.imgur.com/bWITgr3.jpg" width="100%">
