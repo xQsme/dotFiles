@@ -14,18 +14,35 @@ function commit() {
     git push
 }
 function android(){
-    sudo adb start-server
-        npm start
+    sudo react-native run-android
+}
+function debug(){
+    react-native log-android
 }
 function apk(){
-    exp build:android
+    sudo ./gradlew assembleRelease
 }
-function react-new(){
-	create-react-native-app "$1"
+function emu(){
+    ~/Android-SDK/emulator/emulator -avd Pixel_2_API_27 &
 }
-function mcif(){
-	cd /run/media/xqsme/54341A5F341A4500/Users/Jabroni/Documents/EI/MCIF/
+function bashrc(){
+    subl3 ~/.bashrc
+}
+function web(){
+    cd ~/Git/care-web
+}
+function mobile(){
+    cd ~/Git/care-mobile
+}
+function serve(){
+    php artisan serve
+}
+function transfer(){
+	sudo android-file-transfer &
+}
+function git-save(){
+    git config --global credential.helper store
 }
 
-neofetch
+neofetch | lolcat
 eval $(dircolors -b $HOME/.dircolors)
