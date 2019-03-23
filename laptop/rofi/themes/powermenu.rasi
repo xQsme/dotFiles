@@ -12,7 +12,7 @@
     text-color:       @foreground;
 }
 window {
-    padding: 35% 20%;
+    padding: 31% 20%;
 }
 /* Input window */
 inputbar {
@@ -20,7 +20,7 @@ inputbar {
 }
 /* List of entries top right bottom left */
 element {
-    padding: 65px 0px 0px 80px;
+    padding: 65px 0px -120px 80px;
     margin: 10px;
     border: 0px 0px 8px 0px;
 }

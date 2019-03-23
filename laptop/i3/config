@@ -196,12 +196,12 @@ bindsym $mod+d exec rofi -show run
 
 gaps inner 10
 
-bindsym $mod+l exec dm-tool lock
+bindsym $mod+l exec "scrot -q 100 /tmp/lock.png; mantablockscreen -i /tmp/lock.png; mantablockscreen -cc"
 bindsym $mod+f exec firefox
 bindsym $mod+s exec subl3
 bindsym $mod+c exec code
 bindsym $mod+t exec dolphin
-bindsym Print exec scrot '%Y-%m-%d-%s.jpg' -e 'mv $f ~/Pictures/Screenshots'
+bindsym Print exec scrot -q 100 ~/Pictures/Screenshots/%Y-%m-%d-%s.png
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -214,17 +214,14 @@ bindsym XF86KbdBrightnessDown exec light -k -U 35
 
 assign [class="discord"] 2
 assign [class="Mailspring"] 2
-assign [class="Skype"] 2
-
 
 exec setxkbmap -layout pt
 exec nm-applet
-exec compton
+exec parcellite
+exec compton --dbus
 exec /usr/lib/xfce-polkit/xfce-polkit
 
-#exec termite -e gotop
 exec discord
 exec mailspring
-exec skypeforlinux
 
 exec_always feh --bg-scale ~/Pictures/WP.jpg
