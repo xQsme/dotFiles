@@ -8,7 +8,7 @@ options=$'\n\n\n'
 chosen="$(echo "$options" | $rofi_command -font "Font Awesome 5 Pro Solid 90" -dmenu)"
 case $chosen in
     ) # Lock the screen
-        dm-tool lock
+        scrot -q 100 /tmp/lock.png; mantablockscreen -i /tmp/lock.png; mantablockscreen -cc
         ;;
     ) # Shutdown the computer
         systemctl poweroff

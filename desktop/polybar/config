@@ -9,14 +9,14 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #2f343f
+background = #333
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #dfdfdf
 primary = #ffb52a
 secondary = #e60053
-alert = #bd2c40
+alert = #FF6103
 
 #[modules/xmenu]
 #menu-0 = item 1;command
@@ -60,7 +60,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=12;0"
 
 modules-left = i3
 #modules-center = xwindow
-modules-right = cpu temperature nvidia_usage nvidia_temp memory home filesystem volume date
+modules-right = cpu cpu_temperature nvidia_usage nvidia_temp memory home filesystem volume date
 
 ;filesystem wlan eth xkeyboard
 
@@ -187,7 +187,7 @@ label-mode-background = ${colors.primary}
 label-focused-font = 4
 label-focused = %icon%
 label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = #FF8C00
+label-focused-underline = #FF6103
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 label-unfocused = %icon%
@@ -195,7 +195,7 @@ label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
-label-visible-underline = #FF8C00
+label-visible-underline = #FF6103
 label-visible-padding = ${self.label-focused-padding}
 
 label-urgent = %icon%!
@@ -234,7 +234,7 @@ bar-fill-foreground = #9f78e1
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
-format-underline = #FFFF33
+format-underline = #FF6103
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -246,7 +246,7 @@ type = internal/cpu
 interval = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #68c4af
+format-underline = #FF6103
 label = %percentage%%
 
 [module/home]
@@ -258,7 +258,7 @@ mount-0 = /home
 label-mounted =  %used% / %total%
 label-unmounted =  not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-format-mounted-underline = #baffc9
+format-mounted-underline = #FF6103
 
 [module/filesystem]
 type = internal/fs
@@ -269,14 +269,14 @@ mount-0 = /
 label-mounted =  %used% / %total%
 label-unmounted =  not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-format-mounted-underline = #f7e7b4
+format-mounted-underline = #FF6103
 
 [module/memory]
 type = internal/memory
 interval = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = #FF6103
 label = %percentage_used%%
 
 [module/nvidia_usage]
@@ -284,14 +284,14 @@ type = custom/script
 tail = true
 exec-if = nvidia-smi
 exec = nvidia-smi | grep "%" | rev | cut -d% -f2 | cut -d" " -f1 | rev | awk '{print " "$1"%"}'
-format-underline=#00cc00
+format-underline=#FF6103
 
 [module/nvidia_temp]
 type = custom/script
 tail = true
 exec-if = nvidia-smi
 exec = nvidia-smi | grep "%" | cut -dC -f1 | rev | cut -d" " -f1 | rev | awk '{print " "$1"ºC"}'
-format-underline=#ffa500
+format-underline=#FF6103
 
 [module/wlan]
 type = internal/network
@@ -299,7 +299,7 @@ interface = net1
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = #FF6103
 label-connected = %essid%
 
 format-disconnected =
@@ -320,7 +320,7 @@ type = internal/network
 interface = net0
 interval = 3.0
 
-format-connected-underline = #55aa55
+format-connected-underline = #FF6103
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -343,7 +343,7 @@ time-alt = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #FF6103
 
 label = %date% %time%
 
@@ -353,11 +353,11 @@ type = internal/volume
 format-volume = <label-volume>
 label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
-format-volume-underline = #f90000
+format-volume-underline = #FF6103
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-format-muted-underline = #68c4af
+format-muted-underline = #FF6103
 label-muted = Muted
 
 bar-volume-width = 10
@@ -393,20 +393,20 @@ label-discharging =  %percentage%% %time%
 label-full =  %percentage%%
 
 format-charging = <label-charging>
-format-charging-underline = #00cc99
+format-charging-underline = #FF6103
 
 format-discharging = <label-discharging>
-format-discharging-underline = #ffcc00
+format-discharging-underline = #FF6103
 
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = #00cc00
+format-full-underline = #FF6103
 
 [module/cpu_temperature]
 type = custom/script
 tail = true
 exec-if = sensors
 exec = sensors | grep "Package" | cut -d. -f1 | cut -d+ -f2 | awk '{print " "$1"ºC"}'
-format-underline=#f90000
+format-underline=#FF6103
 
 [settings]
 screenchange-reload = true
