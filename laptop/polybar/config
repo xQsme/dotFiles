@@ -163,15 +163,15 @@ warn-temperature = 60
 
 format = <label>
 
-label = %temperature%
+label =  %temperature%
 
-format-background = #D44500
+format-background = #b34700
 format-prefix = %{T3}%{T-}
-format-prefix-foreground = #D44500
+format-prefix-foreground = #b34700
 format-prefix-background = ${colors.background-alt}
 format-suffix = %{T3}%{T-}
-format-suffix-foreground = #D44500
-format-suffix-background = #D44500
+format-suffix-foreground = #b34700
+format-suffix-background = #b34700
 
 [module/memory]
 type = internal/memory
@@ -181,7 +181,7 @@ label =  %percentage_used%%
 format-background = ${colors.background-alt}
 format-prefix = %{T3}%{T-}
 format-prefix-foreground = ${colors.background-alt}
-format-prefix-background = #D44500
+format-prefix-background = #b34700
 format-suffix = %{T3}%{T-}
 format-suffix-foreground = ${colors.background-alt}
 format-suffix-background = ${colors.background-alt}
@@ -195,21 +195,21 @@ mount-0 = /home
 label-mounted =  %used% / %total%
 label-unmounted =  not mounted
 
-format-mounted-background = #D44500
+format-mounted-background = #b34700
 format-mounted-prefix = %{T3}%{T-}
-format-mounted-prefix-foreground = #D44500
+format-mounted-prefix-foreground = #b34700
 format-mounted-prefix-background = ${colors.background-alt}
 format-mounted-suffix = %{T3}%{T-}
-format-mounted-suffix-foreground = #D44500
-format-mounted-suffix-background = #D44500
+format-mounted-suffix-foreground = #b34700
+format-mounted-suffix-background = #b34700
 
-format-unmounted-background = #D44500
+format-unmounted-background = #b34700
 format-unmounted-prefix = %{T3}%{T-}
-format-unmounted-prefix-foreground = #D44500
+format-unmounted-prefix-foreground = #b34700
 format-unmounted-prefix-background = ${colors.background-alt}
 format-unmounted-suffix = %{T3}%{T-}
-format-unmounted-suffix-foreground = #D44500
-format-unmounted-suffix-background = #D44500
+format-unmounted-suffix-foreground = #b34700
+format-unmounted-suffix-background = #b34700
 
 [module/filesystem]
 type = internal/fs
@@ -223,7 +223,7 @@ label-unmounted =  not mounted
 format-mounted-background = ${colors.background-alt}
 format-mounted-prefix = %{T3}%{T-}
 format-mounted-prefix-foreground = ${colors.background-alt}
-format-mounted-prefix-background = #D44500
+format-mounted-prefix-background = #b34700
 format-mounted-suffix = %{T3}%{T-}
 format-mounted-suffix-foreground = ${colors.background-alt}
 format-mounted-suffix-background = ${colors.background-alt}
@@ -231,7 +231,7 @@ format-mounted-suffix-background = ${colors.background-alt}
 format-unmounted-background = ${colors.background-alt}
 format-unmounted-prefix = %{T3}%{T-}
 format-unmounted-prefix-foreground = ${colors.background-alt}
-format-unmounted-prefix-background = #D44500
+format-unmounted-prefix-background = #b34700
 format-unmounted-suffix = %{T3}%{T-}
 format-unmounted-suffix-foreground = ${colors.background-alt}
 format-unmounted-suffix-background = ${colors.background-alt}
@@ -261,21 +261,21 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-format-volume-background = #D44500
+format-volume-background = #b34700
 format-volume-prefix = %{T3}%{T-}
-format-volume-prefix-foreground = #D44500
+format-volume-prefix-foreground = #b34700
 format-volume-prefix-background = ${colors.background-alt}
 format-volume-suffix = %{T3}%{T-}
-format-volume-suffix-foreground = #D44500
-format-volume-suffix-background = #D44500
+format-volume-suffix-foreground = #b34700
+format-volume-suffix-background = #b34700
 
-format-muted-background = #D44500
+format-muted-background = #b34700
 format-muted-prefix = %{T3}%{T-}
-format-muted-prefix-foreground = #D44500
+format-muted-prefix-foreground = #b34700
 format-muted-prefix-background = ${colors.background-alt}
 format-muted-suffix = %{T3}%{T-}
-format-muted-suffix-foreground = #D44500
-format-muted-suffix-background = #D44500
+format-muted-suffix-foreground = #b34700
+format-muted-suffix-background = #b34700
 
 [module/screen]
 type = custom/script
@@ -285,7 +285,7 @@ interval = 1
 format-background = ${colors.background-alt}
 format-prefix = %{T3}%{T-}
 format-prefix-foreground = ${colors.background-alt}
-format-prefix-background = #D44500
+format-prefix-background = #b34700
 format-suffix = %{T3}%{T-}
 format-suffix-foreground = ${colors.background-alt}
 format-suffix-background = ${colors.background-alt}
@@ -295,13 +295,13 @@ type = custom/script
 exec = light -s "sysfs/leds/asus::kbd_backlight" | cut -d'.' -f1 | awk '{print " "$1"%"}'
 interval = 1
 
-format-background = #D44500
+format-background = #b34700
 format-prefix = %{T3}%{T-}
-format-prefix-foreground = #D44500
+format-prefix-foreground = #b34700
 format-prefix-background = ${colors.background-alt}
 format-suffix = %{T3}%{T-}
-format-suffix-foreground = #D44500
-format-suffix-background = #D44500
+format-suffix-foreground = #b34700
+format-suffix-background = #b34700
 
 [module/battery]
 type = internal/battery
@@ -325,7 +325,7 @@ format-discharging = <label-discharging>
 format-charging-background = ${colors.background-alt}
 format-charging-prefix = %{T3}%{T-}
 format-charging-prefix-foreground = ${colors.background-alt}
-format-charging-prefix-background = #D44500
+format-charging-prefix-background = #b34700
 format-charging-suffix = %{T3}%{T-}
 format-charging-suffix-foreground = ${colors.background-alt}
 format-charging-suffix-background = ${colors.background-alt}
@@ -333,7 +333,7 @@ format-charging-suffix-background = ${colors.background-alt}
 format-discharging-background = ${colors.background-alt}
 format-discharging-prefix = %{T3}%{T-}
 format-discharging-prefix-foreground = ${colors.background-alt}
-format-discharging-prefix-background = #D44500
+format-discharging-prefix-background = #b34700
 format-discharging-suffix = %{T3}%{T-}
 format-discharging-suffix-foreground = ${colors.background-alt}
 format-discharging-suffix-background = ${colors.background-alt}
@@ -341,7 +341,7 @@ format-discharging-suffix-background = ${colors.background-alt}
 format-full-background = ${colors.background-alt}
 format-full-prefix = %{T3}%{T-}
 format-full-prefix-foreground = ${colors.background-alt}
-format-full-prefix-background = #D44500
+format-full-prefix-background = #b34700
 format-full-suffix = %{T3}%{T-}
 format-full-suffix-foreground = ${colors.background-alt}
 format-full-suffix-background = ${colors.background-alt}
@@ -356,15 +356,15 @@ date-alt = " %d/%m/%Y"
 time = "%H:%M"
 time-alt = "%H:%M"
 
-label = %date% %time%
+label = "%date% %time% "
 
-format-background = #D44500
+format-background = #b34700
 format-prefix = %{T3}%{T-}
-format-prefix-foreground = #D44500
+format-prefix-foreground = #b34700
 format-prefix-background = ${colors.background-alt}
 format-suffix = %{T3}%{T-}
 format-suffix-foreground = ${colors.background}
-format-suffix-background = #D44500
+format-suffix-background = #b34700
 
 [settings]
 screenchange-reload = true
