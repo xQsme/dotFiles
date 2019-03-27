@@ -3,7 +3,7 @@
 rofi_command="rofi -columns 4 -lines 1 -theme themes/powermenu.rasi"
 
 # Each of the icon is a selectable element
-options=$'\n\n\n'
+options=$'\n\n\n'
 
 chosen="$(echo "$options" | $rofi_command -font "Font Awesome 5 Pro Solid 85" -dmenu)"
 case $chosen in
@@ -13,10 +13,10 @@ case $chosen in
     ) # Shutdown the computer
         systemctl poweroff
         ;;
-    ) # Reboot the computer
+    ) # Reboot the computer
         systemctl reboot
         ;;
-    ) # Log out of the current session
+    ) # Log out of the current session
         i3-msg exit
         ;;
 esac

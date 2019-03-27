@@ -161,7 +161,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color              #e67e22
+set $bg-color 	         #e67e22
 set $inactive-bg-color   #388E8E
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
@@ -183,10 +183,10 @@ bar {
   	#status_command i3blocks  -c ~/.config/i3/i3blocks.conf
 	#colors {
 		#background $bg-color
-	    #	separator #757575
+	    	#separator #757575
 		#                  border             background         text
 		#focused_workspace  $bg-color          $bg-color          $text-color
-		#inactive_workspace $inactive-bg-color $inactive-bg-color #$inactive-text-color
+		#inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
 		#urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	#}
 }
@@ -208,19 +208,19 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-assign [class="discord"] → output left
-assign [class="Mailspring"] → output left
+# increase/decrease keyboard brightness
+bindsym XF86KbdBrightnessUp exec light -k -A 35
+bindsym XF86KbdBrightnessDown exec light -k -U 35
 
-exec nvidia-settings -a [gpu:0]/GPUFanControlState=1 && nvidia-settings -a [fan:0]/GPUTargetFanSpeed=20
+assign [class="discord"] 2
+assign [class="Mailspring"] 2
 
 exec setxkbmap -layout pt
 exec nm-applet
-exec compton --dbus
 exec parcellite
-exec pulseaudio --start
+exec compton --dbus
 exec /usr/lib/xfce-polkit/xfce-polkit
 
-#exec termite -e gotop
 exec discord
 exec mailspring
 
