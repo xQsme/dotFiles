@@ -52,7 +52,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=16;3"
 
 modules-left = i3
 #modules-center = 
-modules-right =  windowtitle cpu temperature memory home filesystem volume screen backlight battery date xkeyboard
+modules-right =  cpu temperature memory home filesystem volume screen backlight xkeyboard battery date
 
 ;filesystem wlan eth xkeyboard
 
@@ -143,20 +143,6 @@ label-urgent = %icon%!
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
-[module/windowtitle]
-type = internal/xwindow
-format = <label>
-label = %title%
-label-maxlen = 32
-label-empty = Desktop
-format-background = #b34700
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = #b34700
-format-prefix-background = ${colors.background}
-format-suffix = %{T3}%{T-}
-format-suffix-foreground = #b34700
-format-suffix-background = #b34700
-
 [module/cpu]
 type = internal/cpu
 interval = 1
@@ -165,7 +151,7 @@ label =  %percentage%%
 format-background = ${colors.background-alt}
 format-prefix = %{T3}%{T-}
 format-prefix-foreground = ${colors.background-alt}
-format-prefix-background = #b34700
+format-prefix-background = ${colors.background}
 format-suffix = %{T3}%{T-}
 format-suffix-foreground = ${colors.background-alt}
 format-suffix-background = ${colors.background-alt}

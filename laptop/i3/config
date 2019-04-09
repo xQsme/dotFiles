@@ -214,6 +214,7 @@ bindsym XF86KbdBrightnessDown exec light -k -U 35
 
 assign [class="discord"] 2
 assign [class="Mailspring"] 2
+assign [class="Skype"] 2
 
 exec setxkbmap -layout pt
 exec nm-applet
@@ -223,5 +224,6 @@ exec /usr/lib/xfce-polkit/xfce-polkit
 
 exec discord
 exec mailspring
+exec skypeforlinux
 
 exec_always feh --bg-scale ~/Pictures/WP.jpg
