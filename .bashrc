@@ -14,35 +14,38 @@ function commit() {
     git push
 }
 function android(){
-    sudo react-native run-android
+    react-native run-android
 }
 function debug(){
     react-native log-android
 }
 function apk(){
-    sudo ./gradlew assembleRelease
+    ./gradlew assembleRelease
 }
 function emu(){
-    ~/Android-SDK/emulator/emulator -avd Pixel_2_API_27 &
+    ~/Android/Sdk/emulator/emulator -avd Pixel_2_API_28 &
 }
 function bashrc(){
     subl3 ~/.bashrc
 }
-function web(){
-    cd ~/Git/care-web
-}
-function mobile(){
-    cd ~/Git/care-mobile
-}
 function serve(){
     php artisan serve
-}
-function transfer(){
-	sudo android-file-transfer &
 }
 function git-save(){
     git config --global credential.helper store
 }
-
+function pulse(){
+	killall pulseaudio
+	pulseaudio --start
+}
+function layout(){
+    setxkbmap -layout us
+}
+function host(){
+    sudo php artisan serve --host "$1"
+}
+function own(){
+    sudo chown -R xqsme .
+}
 neofetch | lolcat
 eval $(dircolors -b $HOME/.dircolors)
