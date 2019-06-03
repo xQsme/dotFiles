@@ -1,0 +1,51 @@
+####
+#### CMD and CTRL are swapped
+####
+
+# enter fullscreen mode for the focused container
+ctrl + shift - space : chunkc tiling::window --toggle fullscreen
+
+# change focus between tiling / floating windows
+#cmd - f : chunkc tiling::window --toggle float
+
+# change layout of desktop
+ctrl - e : chunkc tiling::desktop --layout bsp
+#alt - s : chunkc tiling::desktop --layout monocle
+
+# kill focused window
+cmd - q : chunkc tiling::window --close
+
+# change focus
+ctrl - 1 : chunkc tiling::desktop --focus 1
+ctrl - 2 : chunkc tiling::desktop --focus 2
+ctrl - left : chunkc tiling::window --focus west
+ctrl - down : chunkc tiling::window --focus south
+ctrl - up : chunkc tiling::window --focus north
+ctrl - right : chunkc tiling::window --focus east
+
+# move focused window
+shift + ctrl - left : chunkc tiling::window --warp west
+shift + ctrl - down : chunkc tiling::window --warp south
+shift + ctrl - up : chunkc tiling::window --warp north
+shift + ctrl - right : chunkc tiling::window --warp east
+
+alt - r : chunkc tiling::desktop --rotate 90
+
+## Resize
+ctrl + cmd - left : chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west;  chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east
+ctrl + cmd - down : chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south
+ctrl + cmd - up : chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge south
+ctrl + cmd - right : chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge west;  chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge east
+
+# move focused container to workspace
+ctrl + shift - 1 : chunkc tiling::window --send-to-desktop 1
+ctrl + shift - 2 : chunkc tiling::window --send-to-desktop 2
+ctrl + shift - 3 : chunkc tiling::window --send-to-desktop 3
+ctrl + shift - 4 : chunkc tiling::window --send-to-desktop 4
+ctrl + shift - 5 : chunkc tiling::window --send-to-desktop 5
+ctrl + shift - 6 : chunkc tiling::window --send-to-desktop 6
+
+# open apps
+ctrl - return : osascript /Users/jabroni/Library/Scripts/new-iterm-window.scpt
+ctrl - f : osascript /Users/jabroni/Library/Scripts/new-firefox-window.scpt
+ctrl - t : osascript /Users/jabroni/Library/Scripts/new-finder-window.scpt
