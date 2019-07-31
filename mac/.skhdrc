@@ -3,7 +3,7 @@
 ####
 
 # enter fullscreen mode for the focused container
-ctrl - space : chunkc tiling::window --toggle fullscreen
+alt - space : chunkc tiling::window --toggle fullscreen
 
 # change focus between tiling / floating windows
 #cmd - f : chunkc tiling::window --toggle float
@@ -13,7 +13,7 @@ ctrl - e : chunkc tiling::desktop --layout bsp
 #alt - s : chunkc tiling::desktop --layout monocle
 
 # kill focused window
-cmd - q : chunkc tiling::window --close
+ctrl - q : chunkc tiling::window --close
 
 # change focus
 ctrl + alt - 1 : chunkc tiling::desktop --focus 1

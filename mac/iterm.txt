@@ -1,0 +1,3 @@
+ https://www.iterm2.com/
+
+ Preferences -> Profiles -> Colors
