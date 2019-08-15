@@ -18,7 +18,7 @@ scrollback_lines = 10000
 #hyperlinks = false
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
-#browser = xdg-open
+browser = firefox
 
 # "system", "on" or "off"
 #cursor_blink = system
@@ -44,7 +44,7 @@ cursor_shape = ibeam
 foreground      = #abadac
 foreground_bold = #abadac
 cursor          = #abadac
-background      = rgba(25, 25, 25, 0.75)
+background      = rgba(50,50,50)
 
 # black
 color0  = #282a2e
