@@ -8,15 +8,13 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #333
-;foreground = ${xrdb:color7:#222}
-foreground = #aaa
-foreground-alt = #aaa
-primary = #ffb52a
-secondary = #e60053
-alert = #CD3700
+background = #000d0d0d
+background-alt = #300fdfdfd
+foreground = #fff
+foreground-alt = #fff
+primary = #fff
+secondary = #fff
+alert = #000d0d0d
 
 #[modules/xmenu]
 #menu-0 = item 1;command
@@ -30,19 +28,26 @@ alert = #CD3700
 [bar/bottom]
 monitor = ${env:MONITOR:eDP-1}
 width = 100%
-height = 24
+height = 27
 ;offset-x = 1%r
 ;offset-y = 1%
 bottom=true
 fixed-center = true
 
-padding-left = 0
-padding-right = 0
-module-margin-left = 0
-module-margin-right = 0
-
 background = ${colors.background}
 foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
 
 font-1 = "Envy Code R:style=Regular:size=12;2"
 font-0 = "Envy Code R:style=Regular:size=12;2"
@@ -52,7 +57,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=16;3"
 
 modules-left = i3
 #modules-center = 
-modules-right =  windowtitle cpu temperature memory home filesystem volume screen backlight battery date xkeyboard
+modules-right =  cpu temperature memory home filesystem volume screen backlight battery date xkeyboard
 
 ;filesystem wlan eth xkeyboard
 
@@ -111,6 +116,7 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
+label-focused-underline = #fff
 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
@@ -123,12 +129,12 @@ ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
 
-label-mode-foreground = #000
+label-mode-foreground = #fff
 label-mode-background = ${colors.primary}
 
 label-focused-font = 4
 label-focused = %icon%
-label-focused-foreground = #FF6103
+label-focused-foreground = #fff
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
@@ -143,121 +149,62 @@ label-urgent = %icon%!
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
-[module/windowtitle]
-type = internal/xwindow
-format = <label>
-label = %title%
-label-maxlen = 32
-label-empty = Desktop
-format-background = #b34700
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = #b34700
-format-prefix-background = ${colors.background}
-format-suffix = %{T3}%{T-}
-format-suffix-foreground = #b34700
-format-suffix-background = #b34700
-
 [module/cpu]
 type = internal/cpu
 interval = 1
-label =  %percentage%%
-
-format-background = ${colors.background-alt}
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = ${colors.background-alt}
-format-prefix-background = #b34700
-format-suffix = %{T3}%{T-}
-format-suffix-foreground = ${colors.background-alt}
-format-suffix-background = ${colors.background-alt}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #fff
+label = %percentage%%
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
-
 format = <label>
-
-label =  %temperature%
-
-format-background = #b34700
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = #b34700
-format-prefix-background = ${colors.background-alt}
-format-suffix = %{T3}%{T-}
-format-suffix-foreground = #b34700
-format-suffix-background = #b34700
+label = %temperature%
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #fff
 
 [module/memory]
 type = internal/memory
 interval = 1
-label =  %percentage_used%%
-
-format-background = ${colors.background-alt}
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = ${colors.background-alt}
-format-prefix-background = #b34700
-format-suffix = %{T3}%{T-}
-format-suffix-foreground = ${colors.background-alt}
-format-suffix-background = ${colors.background-alt}
+label = %percentage_used%%
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #fff
 
 [module/home]
 type = internal/fs
 interval = 25
-
 mount-0 = /home
-
-label-mounted =  %used% / %total%
-label-unmounted =  not mounted
-
-format-mounted-background = #b34700
-format-mounted-prefix = %{T3}%{T-}
-format-mounted-prefix-foreground = #b34700
-format-mounted-prefix-background = ${colors.background-alt}
-format-mounted-suffix = %{T3}%{T-}
-format-mounted-suffix-foreground = #b34700
-format-mounted-suffix-background = #b34700
-
-format-unmounted-background = #b34700
-format-unmounted-prefix = %{T3}%{T-}
-format-unmounted-prefix-foreground = #b34700
-format-unmounted-prefix-background = ${colors.background-alt}
-format-unmounted-suffix = %{T3}%{T-}
-format-unmounted-suffix-foreground = #b34700
-format-unmounted-suffix-background = #b34700
+label-mounted = %used% / %total%
+label-unmounted = not mounted
+format-mounted-prefix = " "
+format-mounted-prefix-foreground = ${colors.foreground-alt}
+format-mounted-underline = #fff
+format-unmounted-prefix = " "
+format-unmounted-prefix-foreground = ${colors.foreground-alt}
+format-unmounted-underline = #fff
 
 [module/filesystem]
 type = internal/fs
 interval = 25
-
 mount-0 = /
-
-label-mounted =  %used% / %total%
-label-unmounted =  not mounted
-
-format-mounted-background = ${colors.background-alt}
-format-mounted-prefix = %{T3}%{T-}
-format-mounted-prefix-foreground = ${colors.background-alt}
-format-mounted-prefix-background = #b34700
-format-mounted-suffix = %{T3}%{T-}
-format-mounted-suffix-foreground = ${colors.background-alt}
-format-mounted-suffix-background = ${colors.background-alt}
-
-format-unmounted-background = ${colors.background-alt}
-format-unmounted-prefix = %{T3}%{T-}
-format-unmounted-prefix-foreground = ${colors.background-alt}
-format-unmounted-prefix-background = #b34700
-format-unmounted-suffix = %{T3}%{T-}
-format-unmounted-suffix-foreground = ${colors.background-alt}
-format-unmounted-suffix-background = ${colors.background-alt}
+label-mounted = %used% / %total%
+label-unmounted = not mounted
+format-mounted-prefix = " "
+format-mounted-prefix-foreground = ${colors.foreground-alt}
+format-mounted-underline = #fff
+format-unmounted-prefix = " "
+format-unmounted-prefix-foreground = ${colors.foreground-alt}
+format-unmounted-underline = #fff
 
 [module/volume]
 type = internal/volume
-
 format-volume = <label-volume>
-label-volume =  %percentage%%
-
-label-muted =  Muted
-
+label-volume = %percentage%%
+label-muted = Muted
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
@@ -274,91 +221,51 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
-
-format-volume-background = #b34700
-format-volume-prefix = %{T3}%{T-}
-format-volume-prefix-foreground = #b34700
-format-volume-prefix-background = ${colors.background-alt}
-format-volume-suffix = %{T3}%{T-}
-format-volume-suffix-foreground = #b34700
-format-volume-suffix-background = #b34700
-
-format-muted-background = #b34700
-format-muted-prefix = %{T3}%{T-}
-format-muted-prefix-foreground = #b34700
-format-muted-prefix-background = ${colors.background-alt}
-format-muted-suffix = %{T3}%{T-}
-format-muted-suffix-foreground = #b34700
-format-muted-suffix-background = #b34700
+format-muted-prefix = " "
+format-muted-prefix-foreground = ${colors.foreground-alt}
+format-muted-underline = #fff
+format-volume-prefix = " "
+format-volume-prefix-foreground = ${colors.foreground-alt}
+format-volume-underline = #fff
 
 [module/screen]
 type = custom/script
-exec = light | cut -d'.' -f1 | awk '{print " "$1"%"}'
+exec = light | cut -d'.' -f1 | awk '{print $1"%"}'
 interval = 1
-
-format-background = ${colors.background-alt}
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = ${colors.background-alt}
-format-prefix-background = #b34700
-format-suffix = %{T3}%{T-}
-format-suffix-foreground = ${colors.background-alt}
-format-suffix-background = ${colors.background-alt}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #fff
 
 [module/backlight]
 type = custom/script
-exec = light -s "sysfs/leds/asus::kbd_backlight" | cut -d'.' -f1 | awk '{print " "$1"%"}'
+exec = light -s "sysfs/leds/asus::kbd_backlight" | cut -d'.' -f1 | awk '{print $1"%"}'
 interval = 1
-
-format-background = #b34700
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = #b34700
-format-prefix-background = ${colors.background-alt}
-format-suffix = %{T3}%{T-}
-format-suffix-foreground = #b34700
-format-suffix-background = #b34700
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #fff
 
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = AC0
 full-at = 98
-
 poll-interval = 1
 animation-charging-framerate = 100
-
 time-format = %H:%M
-
-label-charging =  %percentage%% %time%
-label-discharging =  %percentage%% %time%
-label-full =  %percentage%%
-
+label-charging = %percentage%% %time%
+label-discharging = %percentage%% %time%
+label-full = %percentage%%
 format-charging = <label-charging>
-
 format-discharging = <label-discharging>
-
-format-charging-background = ${colors.background-alt}
-format-charging-prefix = %{T3}%{T-}
-format-charging-prefix-foreground = ${colors.background-alt}
-format-charging-prefix-background = #b34700
-format-charging-suffix = %{T3}%{T-}
-format-charging-suffix-foreground = ${colors.background-alt}
-format-charging-suffix-background = ${colors.background-alt}
-
-format-discharging-background = ${colors.background-alt}
-format-discharging-prefix = %{T3}%{T-}
-format-discharging-prefix-foreground = ${colors.background-alt}
-format-discharging-prefix-background = #b34700
-format-discharging-suffix = %{T3}%{T-}
-format-discharging-suffix-foreground = ${colors.background-alt}
-format-discharging-suffix-background = ${colors.background-alt}
-
-format-full-background = ${colors.background-alt}
-format-full-prefix = %{T3}%{T-}
-format-full-prefix-foreground = ${colors.background-alt}
-format-full-prefix-background = #b34700
-format-full-suffix = %{T3}%{T-}
-format-full-suffix-foreground = ${colors.background-alt}
-format-full-suffix-background = ${colors.background-alt}
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = #fff
+format-charging-prefix = " "
+format-charging-prefix-foreground = ${colors.foreground-alt}
+format-charging-underline = #fff
+format-discharging-prefix = " "
+format-discharging-prefix-foreground = ${colors.foreground-alt}
+format-discharging-underline = #fff
 
 [module/date]
 type = internal/date
@@ -366,19 +273,12 @@ interval = 10
 format = <label>
 date = " %d/%m/%Y"
 date-alt = " %d/%m/%Y"
-
 time = "%H:%M"
 time-alt = "%H:%M"
-
-label = "%date% %time% "
-
-format-background = #b34700
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = #b34700
-format-prefix-background = ${colors.background-alt}
-format-suffix = %{T3}%{T-}
-format-suffix-foreground = ${colors.background}
-format-suffix-background = #b34700
+label = "%date% %time% "
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #fff
 
 [settings]
 screenchange-reload = true
