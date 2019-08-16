@@ -16,9 +16,6 @@ function commit() {
 function android(){
     react-native run-android
 }
-function ssh-ipl(){
-	ssh admin2care@172.22.21.26
-}
 function debug(){
 	react-native log-android
 }
@@ -35,23 +32,8 @@ function emu(){
 function bashrc(){
 	subl3 ~/.bashrc
 }
-function web(){
-	cd ~/Git/care-web
-}
-function mobile(){
-	cd ~/Git/care-mobile
-}
-function login(){
-	cd ~/Git/LoginManagerApp
-}
 function serve(){
 	php artisan serve
-}
-function docs(){
-    cd /run/media/xqsme/54341A5F341A4500/Users/Jabroni/Documents/
-}
-function mcif(){
-	cd /run/media/xqsme/54341A5F341A4500/Users/Jabroni/Documents/EI/MCIF/
 }
 function git-save(){
 	git config --global credential.helper store
