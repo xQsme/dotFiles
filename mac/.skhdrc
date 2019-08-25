@@ -2,6 +2,11 @@
 #### CMD and CTRL are swapped
 ####
 
+:: resize @ : chunkc border::color 0xffdc322f
+
+# reload chunkwm
+ctrl + shift - r : ~/.chunkwmrc; skhd reload
+
 # enter fullscreen mode for the focused container
 alt - space : chunkc tiling::window --toggle fullscreen
 
@@ -16,8 +21,13 @@ ctrl - e : chunkc tiling::desktop --layout bsp
 alt - q : chunkc tiling::window --close
 
 # change focus
-ctrl + alt - 1 : chunkc tiling::desktop --focus 1
-ctrl + alt - 2 : chunkc tiling::desktop --focus 2
+ctrl - 1 : chunkc tiling::desktop --focus 1
+ctrl - 2 : chunkc tiling::desktop --focus 2
+ctrl - 3 : chunkc tiling::desktop --focus 3
+ctrl - 4 : chunkc tiling::desktop --focus 4
+ctrl - 5 : chunkc tiling::desktop --focus 6
+ctrl - 6 : chunkc tiling::desktop --focus 5
+
 ctrl + alt - left : chunkc tiling::window --focus west
 ctrl + alt - down : chunkc tiling::window --focus south
 ctrl + alt - up : chunkc tiling::window --focus north
@@ -29,9 +39,19 @@ shift + ctrl - down : chunkc tiling::window --warp south
 shift + ctrl - up : chunkc tiling::window --warp north
 shift + ctrl - right : chunkc tiling::window --warp east
 
-ctrl - r : chunkc tiling::desktop --rotate 90
+#ctrl - r : chunkc tiling::desktop --rotate 90
 
 ## Resize
+ctrl - r ; resize
+resize < ctrl - r ; default
+resize < return ; default
+resize < escape ; default
+
+resize < left : chunkc tiling::window --use-temporary-ratio -0.03 --adjust-window-edge west; chunkc tiling::window --use-temporary-ratio -0.03 --adjust-window-edge east
+resize < down : chunkc tiling::window --use-temporary-ratio -0.03 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.03 --adjust-window-edge south
+resize < up : chunkc tiling::window --use-temporary-ratio 0.03 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio 0.03 --adjust-window-edge south
+resize < right : chunkc tiling::window --use-temporary-ratio 0.03 --adjust-window-edge west; chunkc tiling::window --use-temporary-ratio 0.03 --adjust-window-edge east
+
 ctrl + cmd - left : chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west;  chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east
 ctrl + cmd - down : chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south
 ctrl + cmd - up : chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge south
