@@ -14,7 +14,7 @@ foreground = #fff
 foreground-alt = #fff
 primary = #fff
 secondary = #fff
-alert = #fff
+alert = #000d0d0d
 
 #[modules/xmenu]
 #menu-0 = item 1;command
