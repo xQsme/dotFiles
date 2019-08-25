@@ -54,6 +54,10 @@ function cache(){
 	paccache -rk1
 	paccache -ruk0
 }
+function pulse(){
+    killall pulseaudio
+    pulseaudio --daemonize
+}
 
 neofetch
 eval $(dircolors -b $HOME/.dircolors)
