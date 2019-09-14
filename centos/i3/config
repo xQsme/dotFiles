@@ -193,9 +193,9 @@ bar {
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 
-bindsym $mod+l exec "scrot -q 100 /tmp/lock.png; mantablockscreen -i /tmp/lock.png; mantablockscreen -cc"
+bindsym $mod+l exec i3lock -i ~/Pictures/WP.jpg
 bindsym $mod+f exec firefox
-bindsym $mod+s exec subl3
+bindsym $mod+s exec chromium
 bindsym $mod+c exec code
 bindsym $mod+t exec nemo
 bindsym Print exec scrot -q 100 ~/Pictures/Screenshots/%Y-%m-%d-%s.png
@@ -209,12 +209,12 @@ assign [class="discord"] 2
 assign [class="Mailspring"] 2
 assign [class="Skype"] 2
 
-exec parcellite
+exec klipper
 
 exec discord
 exec mailspring
 exec skypeforlinux
 
-#exec xrandr -s 1920x1080
+#exec xrandr --output DP-2 --left-of eDP-1
 
 exec_always feh --bg-scale ~/Pictures/WP.jpg
