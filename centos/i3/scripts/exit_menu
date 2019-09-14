@@ -42,6 +42,6 @@ kill_apps
 # execute the choice in background
 case "$choice" in
   0) i3-msg exit &      ;;
-  1) sudo shutdown -r now & ;;
-  2) sudo shutdown -h now & ;;
+  1) systemctl poweroff & ;;
+  2) systemctl reboot & ;;
 esac
