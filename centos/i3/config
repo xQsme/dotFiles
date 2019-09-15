@@ -215,6 +215,7 @@ exec discord
 exec mailspring
 exec skypeforlinux
 
+#exec xrandr --output eDP1 --mode 1680x1050
 #exec xrandr --output DP-2 --left-of eDP-1
 
 exec_always feh --bg-scale ~/Pictures/WP.jpg
