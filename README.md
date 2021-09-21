@@ -1,6 +1,9 @@
 # dotFiles
-i3-gaps
 
-i use Arch btw
+## System config files
 
-<img src="https://i.imgur.com/3LvrmGT.png" width="100%">
+### Nvidia sleep script
+/usr/bin/nvidia-sleep.sh
+
+### SDDM display config
+/usr/share/sddm/scripts/Xsetup
